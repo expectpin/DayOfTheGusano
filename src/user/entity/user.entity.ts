@@ -21,19 +21,10 @@ export class User {
   lastName: string;
 
   @Column()
-  address: string;
-
-  @Column({ name: "phone_number" })
-  phoneNumber: string;
-
-  @Column()
   email: string;
 
   @Column()
   password: string;
-
-  @Column({ name: "profile_picture" })
-  profilePicture: string;
 
   @Column({ type: "enum", enum: Role, default: Role.User })
   role: Role;
