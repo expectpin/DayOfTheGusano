@@ -17,12 +17,6 @@ export class CreateUserDto {
   @IsString()
   lastName: string;
 
-  @IsString()
-  address: string;
-
-  @IsString()
-  phoneNumber: string;
-
   @IsEmail()
   email: string;
 
@@ -32,8 +26,4 @@ export class CreateUserDto {
   @IsBoolean()
   @IsOptional()
   isActive?: boolean;
-
-  @IsOptional()
-  @IsString()
-  profilePicture: string;
 }
