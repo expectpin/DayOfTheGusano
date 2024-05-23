@@ -1,4 +1,3 @@
-import { JwtAuthGuard } from "./../auth/guards/jwt-auth.guard";
 import { CreateUserDto } from "./dto/create-user.dto";
 import { UserService } from "./user.service";
 import {
