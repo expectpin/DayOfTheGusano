@@ -1,0 +1,4 @@
+CREATE TYPE "public"."users_role_enum" AS ENUM('User', 'Admin');
+CREATE TABLE "users" ("id" SERIAL NOT NULL, "name" character varying NOT NULL, "lastName" character varying NOT NULL, "email" character varying NOT NULL, "password" character varying NOT NULL, "role" "public"."users_role_enum" NOT NULL DEFAULT 'User', "created_at" TIMESTAMP NOT NULL DEFAULT now(), "updated_at" TIMESTAMP NOT NULL DEFAULT now(), "is_active" boolean NOT NULL DEFAULT false, "is_deleted" boolean NOT NULL DEFAULT false, CONSTRAINT "PK_a3ffb1c0c8416b9fc6f907b7433" PRIMARY KEY ("id"));
+INSERT INTO public.users(name, "lastName", email, password, role, is_active, is_deleted)
+	VALUES ('Capim', 'Palheta', 'capim.palheta@teste.com', '$2a$10$2.ON8ZHtHIhqwwG7AGsPMeX7WFuVqd4gDNZrHxrKyU4zgRLxYf6zC', 'Admin', true, false);

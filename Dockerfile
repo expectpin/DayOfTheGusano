@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm ci
+RUN NODE_ENV=development npm install && npm --global install nodemon
 
 COPY . .
 
@@ -12,8 +12,4 @@ RUN npm run build
 
 EXPOSE 3000
 
-RUN npm run migration:run
-
-CMD [ "npm", "start" ]
-
-
+CMD [ "npm", "run", "start:dev" ]
